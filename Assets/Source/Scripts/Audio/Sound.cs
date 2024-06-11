@@ -13,6 +13,8 @@ public class Sound
     [Range(0f, 3f)]
     public float pitch;
 
+    public bool hasSubtitle;
+
     [HideInInspector]
     public AudioSource source;
 }

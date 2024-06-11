@@ -41,5 +41,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+
+        if (s.hasSubtitle)
+        {
+            FindObjectOfType<SubtitlesManager>().StartSubtitles(s.name);
+        }
     }
 }
