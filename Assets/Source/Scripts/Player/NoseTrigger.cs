@@ -18,16 +18,16 @@ public class NoseTrigger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _playerOnTower is false)
         {
             _player.enabled = false;
-            _interactiveCommands.TeleportPlayerUp(_player.transform);
+            StartCoroutine(_interactiveCommands.ShowBlackScreen(_playerOnTower));
             _playerOnTower = true;
-            _player.enabled = true;
+            _playerAttemptClimp = false;
         }
         else if (Input.GetKeyDown(KeyCode.E) && _playerOnTower)
         {
             _player.enabled = false;
-            _interactiveCommands.TeleportPlayerBack(_player.transform);
+            StartCoroutine(_interactiveCommands.ShowBlackScreen(_playerOnTower));
             _playerOnTower = false;
-            _player.enabled = true;
+            _playerAttemptClimp = false;
         }
     }
 
