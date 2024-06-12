@@ -3,6 +3,7 @@ using UnityEngine;
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] private WaypointPath _waypointPath;
+    [SerializeField] private Animator _animator;
     [SerializeField] private float _speed;
     [SerializeField] private float _timeWait;
 
@@ -14,12 +15,24 @@ public class MovingPlatform : MonoBehaviour
     private float _timeToWaypoint;
     private float _elapsedTime;
 
+    private bool _isStarted;
+
+    public bool IsStarted() => _isStarted;
+
     private void Start()
     {
         TargetNextWaypoint();
     }
 
     private void FixedUpdate()
+    {
+        if (_isStarted)
+        {
+            MovePlatform();
+        }
+    }
+
+    private void MovePlatform()
     {
         _elapsedTime += Time.deltaTime;
 
@@ -30,12 +43,12 @@ public class MovingPlatform : MonoBehaviour
 
         if (elapsedPercentage >= _timeWait)
         {
-            TargetNextWaypoint();
+            _animator.SetBool("isClosed", false);
         }
     }
 
     private void TargetNextWaypoint()
-    {
+    {    
         _previousWaypoint = _waypointPath.GetWaypoint(_targetWaypointIndex);
         _targetWaypointIndex = _waypointPath.GetNextWaypoint(_targetWaypointIndex);
         _targetWaypoint = _waypointPath.GetWaypoint(_targetWaypointIndex);
@@ -49,10 +62,14 @@ public class MovingPlatform : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         other.transform.SetParent(transform);
+        _isStarted = true;
+        _animator.SetBool("isClosed", true);
     }
 
     private void OnTriggerExit(Collider other)
     {
         other.transform.SetParent(null);
+        _isStarted = false;
+        TargetNextWaypoint();
     }
 }
