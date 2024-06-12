@@ -1,10 +1,11 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class InteractiveCommands : MonoBehaviour
 {
     [SerializeField] private GameObject _playerMessageInteractive;
+    [SerializeField] private GameObject _handUI;
+    [SerializeField] private GameObject _crosshairUI;
     [SerializeField] private Transform[] _teleportPoints;
     [SerializeField] private CharacterController _playerController;
     [SerializeField] private CanvasGroup _canvasGroup;
@@ -12,22 +13,23 @@ public class InteractiveCommands : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _timeWait;
 
-    private bool _isShowBlackScreen;
-
     public void ShowInteractiveMessage()
     {
         _playerMessageInteractive.SetActive(true);
+        _handUI.SetActive(true);
+        _crosshairUI.SetActive(false);
     }
     public void HideInteractiveMessage()
     {
         _playerMessageInteractive.SetActive(false);
+        _handUI.SetActive(false);
+        _crosshairUI.SetActive(true);
     }
 
     public IEnumerator ShowBlackScreen(bool playerOnTower)
     {
         while (_canvasGroup.alpha < 1f)
         {
-            _isShowBlackScreen = true;
             _canvasGroup.alpha += _speed;
             yield return new WaitForSeconds(_timeWait);
         }
@@ -41,7 +43,6 @@ public class InteractiveCommands : MonoBehaviour
             _playerController.transform.position = _teleportPoints[1].position;
         }
 
-        _isShowBlackScreen = false;
         StartCoroutine(HideBlackScreen());
     }
 
