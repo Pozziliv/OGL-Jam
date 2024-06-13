@@ -21,6 +21,8 @@ public class NoseTrigger : MonoBehaviour
             StartCoroutine(_interactiveCommands.ShowBlackScreen(_playerOnTower));
             _playerOnTower = true;
             _playerAttemptClimp = false;
+
+            FindObjectOfType<AudioManager>().Play("TowerAmbient");
         }
         else if (Input.GetKeyDown(KeyCode.E) && _playerOnTower)
         {
@@ -28,6 +30,8 @@ public class NoseTrigger : MonoBehaviour
             StartCoroutine(_interactiveCommands.ShowBlackScreen(_playerOnTower));
             _playerOnTower = false;
             _playerAttemptClimp = false;
+
+            FindObjectOfType<AudioManager>().Stop("TowerAmbient");
         }
     }
 
