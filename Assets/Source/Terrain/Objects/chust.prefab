@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 938e49d4d5f9ac240a929cd2fc899930, type: 2}
+  - {fileID: 2100000, guid: 4764c4056b4324a4e8b3b1be881f9292, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,7 +103,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.017112887
+  m_Radius: 0.018
   m_Height: 0.04687733
   m_Direction: 1
   m_Center: {x: 0, y: 0.02435399, z: 0}
@@ -225,7 +225,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4764c4056b4324a4e8b3b1be881f9292, type: 2}
+  - {fileID: 2100000, guid: 938e49d4d5f9ac240a929cd2fc899930, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

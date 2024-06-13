@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class QuestsManager : MonoBehaviour
 {
-
     private bool _isStarted = false;
+
+    [SerializeField] private GameObject[] _dinoCheckTriggers;
 
     private void Start()
     {
@@ -43,5 +44,13 @@ public class QuestsManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void SetDinoCheck()
+    {
+        foreach (GameObject obj in _dinoCheckTriggers)
+        {
+            obj.SetActive(false);
+        }
     }
 }
