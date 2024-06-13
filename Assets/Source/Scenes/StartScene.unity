@@ -16531,6 +16531,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Funicular
       objectReference: {fileID: 0}
+    - target: {fileID: 1721810710576231419, guid: 2c995ca787389284894d73bb3d602d73,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.4308748
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721810710576231419, guid: 2c995ca787389284894d73bb3d602d73,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.9969101
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721810710576231419, guid: 2c995ca787389284894d73bb3d602d73,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721810710576231419, guid: 2c995ca787389284894d73bb3d602d73,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.7154374
+      objectReference: {fileID: 0}
+    - target: {fileID: 1721810710576231419, guid: 2c995ca787389284894d73bb3d602d73,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -1.5564613
+      objectReference: {fileID: 0}
     - target: {fileID: 2734811937092413527, guid: 2c995ca787389284894d73bb3d602d73,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -16604,7 +16629,7 @@ PrefabInstance:
     - target: {fileID: 8081725116977643513, guid: 2c995ca787389284894d73bb3d602d73,
         type: 3}
       propertyPath: _speed
-      value: 0.8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8081725116977643513, guid: 2c995ca787389284894d73bb3d602d73,
         type: 3}
@@ -16613,8 +16638,18 @@ PrefabInstance:
       objectReference: {fileID: 2090007212}
     - target: {fileID: 8081725116977643513, guid: 2c995ca787389284894d73bb3d602d73,
         type: 3}
+      propertyPath: _collider
+      value: 
+      objectReference: {fileID: 2090007214}
+    - target: {fileID: 8081725116977643513, guid: 2c995ca787389284894d73bb3d602d73,
+        type: 3}
       propertyPath: _timeWait
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8081725116977643513, guid: 2c995ca787389284894d73bb3d602d73,
+        type: 3}
+      propertyPath: _doorsHandler
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8081725116977643513, guid: 2c995ca787389284894d73bb3d602d73,
         type: 3}
@@ -16629,12 +16664,12 @@ PrefabInstance:
     - target: {fileID: 8911963402876718797, guid: 2c995ca787389284894d73bb3d602d73,
         type: 3}
       propertyPath: m_Size.z
-      value: 2.5205874
+      value: 2.155437
       objectReference: {fileID: 0}
     - target: {fileID: 8911963402876718797, guid: 2c995ca787389284894d73bb3d602d73,
         type: 3}
       propertyPath: m_Center.z
-      value: 0.14989638
+      value: 0.3324716
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19257,6 +19292,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &2090007214 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1721810710576231419, guid: 2c995ca787389284894d73bb3d602d73,
+    type: 3}
+  m_PrefabInstance: {fileID: 1735754771}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2091660366
 GameObject:
   m_ObjectHideFlags: 0
