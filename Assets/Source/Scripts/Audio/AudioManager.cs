@@ -1,10 +1,14 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private Sound[] _sounds;
+
+    [SerializeField] private AnimationCurve _silenceCurve;
 
     public static AudioManager instance;
 
@@ -40,6 +44,7 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
+        s.source.volume = s.volume;
         s.source.Play();
 
         if (s.hasSubtitle)
@@ -55,6 +60,23 @@ public class AudioManager : MonoBehaviour
         {
             return;
         }
-        s.source.Stop();
+
+        StartCoroutine(SilenceAudio(s.source, 3f));
+    }
+
+    private IEnumerator SilenceAudio(AudioSource audioSource, float time)
+    {
+        float progress = 0f;
+        float startVolume = audioSource.volume;
+
+        while (progress < 1f)
+        {
+            progress += Time.deltaTime / time;
+            audioSource.volume = Mathf.Lerp(startVolume, 0f, progress);
+
+            yield return null;
+        }
+
+        audioSource.Stop();
     }
 }
