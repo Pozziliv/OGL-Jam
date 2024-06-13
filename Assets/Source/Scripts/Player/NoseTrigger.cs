@@ -7,15 +7,12 @@ public class NoseTrigger : MonoBehaviour
 
     private bool _playerOnTower;
     private bool _playerAttemptClimp;
+    private bool _playerWithDino;
+    private bool _playerWithDinoAlreadyInterracted;
 
     private void Update()
     {
-        if (_playerAttemptClimp is false)
-        {
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.E) && _playerOnTower is false)
+        if (_playerAttemptClimp is true && Input.GetKeyDown(KeyCode.E) && _playerOnTower is false)
         {
             _player.enabled = false;
             StartCoroutine(_interactiveCommands.ShowBlackScreen(_playerOnTower));
@@ -24,7 +21,7 @@ public class NoseTrigger : MonoBehaviour
 
             FindObjectOfType<AudioManager>().Play("TowerAmbient");
         }
-        else if (Input.GetKeyDown(KeyCode.E) && _playerOnTower)
+        else if (_playerAttemptClimp is true && Input.GetKeyDown(KeyCode.E) && _playerOnTower)
         {
             _player.enabled = false;
             StartCoroutine(_interactiveCommands.ShowBlackScreen(_playerOnTower));
@@ -32,6 +29,12 @@ public class NoseTrigger : MonoBehaviour
             _playerAttemptClimp = false;
 
             FindObjectOfType<AudioManager>().Stop("TowerAmbient");
+        }
+        else if(_playerWithDino is true && Input.GetKeyDown(KeyCode.E))
+        {
+            FindObjectOfType<Dino>().Interract();
+            _playerWithDinoAlreadyInterracted = true;
+            _interactiveCommands.HideInteractiveMessage();
         }
     }
 
@@ -42,6 +45,11 @@ public class NoseTrigger : MonoBehaviour
             _playerAttemptClimp = true;
             _interactiveCommands.ShowInteractiveMessage();
         }
+        else if (other.tag == "Dino" && _playerWithDinoAlreadyInterracted is false)
+        {
+            _playerWithDino = true;
+            _interactiveCommands.ShowInteractiveMessage();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -49,6 +57,11 @@ public class NoseTrigger : MonoBehaviour
         if (other.tag == "Stairs")
         {
             _playerAttemptClimp = false;
+            _interactiveCommands.HideInteractiveMessage();
+        }
+        else if (other.tag == "Dino")
+        {
+            _playerWithDino = false;
             _interactiveCommands.HideInteractiveMessage();
         }
     }
