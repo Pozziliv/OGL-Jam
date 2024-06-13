@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Dino : MonoBehaviour
 {
-    [SerializeField] private Transform _finishPoint;
+    [SerializeField] private Transform[] _points;
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Animator _animator;
     [SerializeField] private Animator _stvol;
@@ -27,18 +27,22 @@ public class Dino : MonoBehaviour
         
         _animator.Play("Runing");
 
-        _agent.SetDestination(_finishPoint.position);
+        _agent.SetDestination(_points[0].position);
 
         yield return new WaitForSeconds(1f);
 
         FindObjectOfType<AudioManager>().Play("Nick14");
         //FindObjectOfType<QuestsManager>().SetDinoCheck();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
 
         _stvol.Play("Fall");
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(2f);
+
+        FindObjectOfType<AudioManager>().Play("Nick15");
+
+        yield return new WaitForSeconds(3.5f);
 
         _animator.Play("Idle");
     }
