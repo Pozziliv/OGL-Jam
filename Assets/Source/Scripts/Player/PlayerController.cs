@@ -3,13 +3,14 @@
 
 public class PlayerController : MonoBehaviour
 {
+    private static float _lookSpeed = 2.0f;
+
     [Header("PlayerController")]
     [SerializeField] public Transform Camera;
     [SerializeField, Range(1, 10)] float walkingSpeed = 3.0f;
     [Range(0.1f, 5)] public float CroughSpeed = 1.0f;
     [SerializeField, Range(0, 20)] float RuningSpeed = 4.0f;
     [SerializeField, Range(0, 20)] float jumpSpeed = 6.0f;
-    [SerializeField, Range(0.5f, 10)] float lookSpeed = 2.0f;
     [SerializeField, Range(10, 120)] float lookXLimit = 80.0f;
     [Space(20)]
     [Header("Advance")]
@@ -98,10 +99,10 @@ public class PlayerController : MonoBehaviour
             Lookvertical = -Input.GetAxis("Mouse Y");
             Lookhorizontal = Input.GetAxis("Mouse X");
 
-            rotationX += Lookvertical * lookSpeed;
+            rotationX += Lookvertical * _lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Lookhorizontal * lookSpeed, 0);
+            transform.rotation *= Quaternion.Euler(0, Lookhorizontal * _lookSpeed, 0);
 
             if (isRunning && Moving) cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
             else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
@@ -160,4 +161,8 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetSensitivity(float sensitivity)
+    {
+        _lookSpeed = sensitivity;
+    }
 }
