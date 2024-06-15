@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TreeFall : MonoBehaviour
@@ -11,7 +10,7 @@ public class TreeFall : MonoBehaviour
         if(other.TryGetComponent(out CharacterController playerController))
         {
             playerController.enabled = false;
-
+            FindObjectOfType<HeadBob>().StopAllCoroutines();
             StartCoroutine(TreeFalling());
         }
     }
@@ -19,6 +18,8 @@ public class TreeFall : MonoBehaviour
     private IEnumerator TreeFalling()
     {
         _stvol.Play("Fall");
-        yield return null;
+        _stvol.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.7f);
+        Debug.Log("dad");
     }
 }

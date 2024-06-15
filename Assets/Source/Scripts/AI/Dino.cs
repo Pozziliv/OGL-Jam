@@ -34,11 +34,12 @@ public class Dino : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Nick14");
         //FindObjectOfType<QuestsManager>().SetDinoCheck();
 
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(3f);
 
         _stvol.Play("Fall");
+        _stvol.GetComponent<AudioSource>().Play();
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
 
         FindObjectOfType<AudioManager>().Play("Nick15");
 

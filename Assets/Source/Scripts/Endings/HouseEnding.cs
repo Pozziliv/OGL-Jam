@@ -3,27 +3,61 @@ using UnityEngine;
 
 public class HouseEnding : MonoBehaviour
 {
-    private float _waitTime = 3 * 60f + 40f;
+    private float _waitTime = 140f;
     private float _timer = 0f;
 
-    private bool _onTower;
+    private bool _inHome;
 
-    public void StartWait()
+    private void OnTriggerEnter(Collider other)
     {
-        _onTower = true;
-        _timer = 0f;
-    }
-
-    private IEnumerator WaitingOnTower()
-    {
-        while (_onTower)
+        if(other.TryGetComponent(out CharacterController playerController))
         {
-            yield return null;
+            _inHome = true;
+            _timer = 0f;
+
+            StartCoroutine(WaitingInHome());
         }
     }
 
-    public void EndWait()
+    private IEnumerator WaitingInHome()
     {
-        _onTower = false;
+        int[] phrases = { 0, 0, 0 };
+
+        while (_inHome && _timer <= _waitTime)
+        {
+            if(_timer > 30f && phrases[0] == 0)
+            {
+                phrases[0] = 1;
+                FindObjectOfType<AudioManager>().Play("Nick19");
+            }
+
+            if (_timer > 70f && phrases[1] == 0)
+            {
+                phrases[1] = 1;
+                FindObjectOfType<AudioManager>().Play("Nick20");
+            }
+
+            if (_timer > 110f && phrases[2] == 0)
+            {
+                phrases[2] = 1;
+                FindObjectOfType<AudioManager>().Play("Nick21");
+            }
+
+            _timer += Time.deltaTime;
+            yield return null;
+        }
+
+        if(_timer > 140f)
+        {
+            FindObjectOfType<AudioManager>().Play("Nick21");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out CharacterController playerController))
+        {
+            _inHome = false;
+        }
     }
 }
