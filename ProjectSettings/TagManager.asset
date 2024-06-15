@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Stairs
   - Dino
+  - Car
   layers:
   - Default
   - TransparentFX
