@@ -57,6 +57,12 @@ public class QuestsManager : MonoBehaviour
 
     public void CarEnding()
     {
-        throw new NotImplementedException();
+        StartCoroutine(CarMakeBRRRRRRRRRR());
+    }
+
+    private IEnumerator CarMakeBRRRRRRRRRR()
+    {
+        FindObjectOfType<AudioManager>().Play("Nick28");
+        yield return null;
     }
 }
