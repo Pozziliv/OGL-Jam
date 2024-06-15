@@ -8,6 +8,8 @@ public class QuestsManager : MonoBehaviour
 
     [SerializeField] private GameObject[] _dinoCheckTriggers;
 
+    [SerializeField] private GameObject[] _rideFunicTriggers;
+
     private void Start()
     {
         StartCoroutine(Meeting());
@@ -64,5 +66,29 @@ public class QuestsManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Nick28");
         yield return null;
+    }
+
+    public void SetFuniculerInt(int value)
+    {
+        if(value == 2)
+        {
+            _rideFunicTriggers[0].SetActive(true);
+        }
+        else if (value == 3)
+        {
+            _rideFunicTriggers[1].SetActive(true);
+        }
+        else if (value == 4)
+        {
+            _rideFunicTriggers[2].SetActive(true);
+        }
+        else if (value == 5)
+        {
+            _rideFunicTriggers[3].SetActive(true);
+        }
+        else if (value == 6)
+        {
+            _rideFunicTriggers[4].SetActive(true);
+        }
     }
 }

@@ -7,6 +7,7 @@ public class AnimationHandler : MonoBehaviour
     [SerializeField] private bool _flag;
     [SerializeField] private MovingPlatform _platform;
 
+
     private void OnTriggerEnter(Collider other)
     {
         if (_platform.IsStarted())
@@ -15,6 +16,7 @@ public class AnimationHandler : MonoBehaviour
         }
 
         _animator.SetBool(_animationName, _flag);
+
         _flag = !_flag;
     }
 }

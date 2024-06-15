@@ -8,6 +8,8 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _timeWait;
 
+    [SerializeField] private int _rideIndex = 1;
+
     private int _targetWaypointIndex;
 
     private Transform _previousWaypoint;
@@ -67,6 +69,9 @@ public class MovingPlatform : MonoBehaviour
         other.transform.SetParent(transform);
         _isStarted = true;
         _animator.SetBool("isClosed", true);
+
+        FindObjectOfType<QuestsManager>().SetFuniculerInt(_rideIndex);
+        _rideIndex += 1;
     }
 
     private void OnTriggerExit(Collider other)
