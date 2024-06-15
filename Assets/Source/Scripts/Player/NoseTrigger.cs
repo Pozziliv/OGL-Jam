@@ -9,6 +9,8 @@ public class NoseTrigger : MonoBehaviour
     private bool _playerAttemptClimp;
     private bool _playerWithDino;
     private bool _playerWithDinoAlreadyInterracted;
+    private bool _playerOnStartExit;
+    private bool _playerWithACar;
 
     private void Update()
     {
@@ -20,6 +22,7 @@ public class NoseTrigger : MonoBehaviour
             _playerAttemptClimp = false;
 
             FindObjectOfType<AudioManager>().Play("TowerAmbient");
+            FindObjectOfType<TowerEndingTrigger>().StartWait();
         }
         else if (_playerAttemptClimp is true && Input.GetKeyDown(KeyCode.E) && _playerOnTower)
         {
@@ -29,11 +32,18 @@ public class NoseTrigger : MonoBehaviour
             _playerAttemptClimp = false;
 
             FindObjectOfType<AudioManager>().Stop("TowerAmbient");
+            FindObjectOfType<TowerEndingTrigger>().EndWait();
         }
         else if(_playerWithDino is true && Input.GetKeyDown(KeyCode.E))
         {
             FindObjectOfType<Dino>().Interract();
             _playerWithDinoAlreadyInterracted = true;
+            _interactiveCommands.HideInteractiveMessage();
+        }
+        else if (_playerOnStartExit is false && Input.GetKeyDown(KeyCode.E) && _playerWithACar is true)
+        {
+            FindObjectOfType<QuestsManager>().CarEnding();
+            _playerOnStartExit = true;
             _interactiveCommands.HideInteractiveMessage();
         }
     }
@@ -50,6 +60,11 @@ public class NoseTrigger : MonoBehaviour
             _playerWithDino = true;
             _interactiveCommands.ShowInteractiveMessage();
         }
+        else if (other.tag == "Car" && _playerOnStartExit is false)
+        {
+            _playerWithACar = true;
+            _interactiveCommands.ShowInteractiveMessage();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -62,6 +77,11 @@ public class NoseTrigger : MonoBehaviour
         else if (other.tag == "Dino")
         {
             _playerWithDino = false;
+            _interactiveCommands.HideInteractiveMessage();
+        }
+        else if (other.tag == "Car")
+        {
+            _playerWithACar = false;
             _interactiveCommands.HideInteractiveMessage();
         }
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -52,5 +53,10 @@ public class QuestsManager : MonoBehaviour
         {
             obj.SetActive(false);
         }
+    }
+
+    public void CarEnding()
+    {
+        throw new NotImplementedException();
     }
 }
