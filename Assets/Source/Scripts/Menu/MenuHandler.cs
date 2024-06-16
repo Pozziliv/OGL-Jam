@@ -4,10 +4,15 @@ using UnityEngine.UI;
 
 public class MenuHandler : MonoBehaviour
 {
+    [Header("Main Menu UI")]
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private GameObject _settingWindow;
     [SerializeField] private Slider _slider;
     [SerializeField] private int _indexOfScene;
+    [Space]
+    [Header("Game UI")]
+    [SerializeField] private GameObject _activeWindow;
+    [SerializeField] private PlayerCursorControl _playerCursorControl;
     
     public void ExitGame()
     {
@@ -32,5 +37,16 @@ public class MenuHandler : MonoBehaviour
     public void SetNewSensitivity()
     {
         _playerController.SetSensitivity(_slider.value);
+    }
+
+    public void HideActiveWindow()
+    {
+        _activeWindow.SetActive(false);
+        _playerCursorControl.DeactivatePlayerCursor();
+    }
+
+    public void ShowActiveWindow()
+    {
+        _activeWindow.SetActive(true);
     }
 }
