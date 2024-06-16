@@ -49,7 +49,7 @@ public class HouseEnding : MonoBehaviour
 
         if(_inHome)
         {
-            FindObjectOfType<AudioManager>().Play("Nick21");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            FindObjectOfType<QuestsManager>().HomeEnd();//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         }
     }
 

@@ -76,15 +76,19 @@ public class QuestsManager : MonoBehaviour
     public void CarEnding()
     {
         StartCoroutine(CarMakeBRRRRRRRRRR());
-    }
+    }//1
 
     private IEnumerator CarMakeBRRRRRRRRRR()
     {
         FindObjectOfType<AudioManager>().Play("Nick28");
+        _crosshair.SetActive(false);
         _blackScreen.alpha = 1;
         FindObjectOfType<CharacterController>().enabled = false;
         yield return new WaitForSeconds(13f);
         _endingsScreens[0].alpha = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void SetFuniculerInt(int value)
@@ -114,7 +118,7 @@ public class QuestsManager : MonoBehaviour
     public void SixEndStart()
     {
         StartCoroutine(SixEnding());
-    }
+    }//6
 
     private IEnumerator SixEnding()
     {
@@ -124,12 +128,15 @@ public class QuestsManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Nick27");
         yield return new WaitForSeconds(12f);
         _endingsScreens[5].alpha = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void SevenEndStart()
     {
         StartCoroutine(SevenEnding());
-    }
+    }//7
 
     private IEnumerator SevenEnding()
     {
@@ -170,7 +177,76 @@ public class QuestsManager : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("Nick46");
             yield return new WaitForSeconds(10f);
-            _endingsScreens[0].alpha = 1;
+            _endingsScreens[6].alpha = 1;
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
+    }
+
+    public void FourEnd()
+    {
+        StartCoroutine(FourEnding());
+    }//4
+
+    private IEnumerator FourEnding()
+    {
+        _blackScreen.alpha = 1;
+        _crosshair.SetActive(false);
+        yield return new WaitForSeconds(3f);
+        _endingsScreens[3].alpha = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void FunicEndStart()
+    {
+        StartCoroutine(SecondEnding());
+    }//2
+
+    private IEnumerator SecondEnding()
+    {
+        _blackScreen.alpha = 1;
+        _crosshair.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        _endingsScreens[1].alpha = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void ThirdEndStart()
+    {
+        StartCoroutine(ThirdEnding());
+    }//3
+
+    private IEnumerator ThirdEnding()
+    {
+        yield return new WaitForSeconds(16f);
+        _blackScreen.alpha = 1;
+        _crosshair.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        _endingsScreens[2].alpha = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void HomeEnd()
+    {
+        StartCoroutine(HomeEnding());
+    }//5
+
+    private IEnumerator HomeEnding()
+    {
+        _blackScreen.alpha = 1;
+        _crosshair.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Nick40");
+        yield return new WaitForSeconds(15f);
+        _endingsScreens[4].alpha = 1;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

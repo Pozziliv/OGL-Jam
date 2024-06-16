@@ -51,6 +51,8 @@ public class TowerEndingTrigger : MonoBehaviour
             {
                 phrases[3] = 1;
                 FindObjectOfType<AudioManager>().Play("Nick38");
+
+                FindObjectOfType<QuestsManager>().ThirdEndStart();
             }
 
             _timer += Time.deltaTime;

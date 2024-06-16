@@ -21,5 +21,7 @@ public class TreeFall : MonoBehaviour
         _stvol.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.7f);
         FindFirstObjectByType<AudioManager>().Play("Nick39");
+
+        FindObjectOfType<QuestsManager>().FourEnd();
     }
 }
