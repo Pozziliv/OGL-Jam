@@ -193,7 +193,7 @@ public class QuestsManager : MonoBehaviour
     {
         _blackScreen.alpha = 1;
         _crosshair.SetActive(false);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         _endingsScreens[3].alpha = 1;
 
         Cursor.lockState = CursorLockMode.None;
