@@ -47,7 +47,7 @@ public class HouseEnding : MonoBehaviour
             yield return null;
         }
 
-        if(_timer > 140f)
+        if(_inHome)
         {
             FindObjectOfType<AudioManager>().Play("Nick21");//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         }

@@ -3,6 +3,7 @@ using UnityEngine.Audio;
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+using System.Linq;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -40,11 +41,23 @@ public class AudioManager : MonoBehaviour
     public void Play(string name)
     {
         Sound s = Array.Find(_sounds, sound => sound.name == name);
-        if (s == null) 
+        if (s == null)
         {
             return;
         }
         s.source.volume = s.volume;
+
+        if (s.soloVoice is true)
+        {
+            foreach (var sound in _sounds.Where(x => x.source.isPlaying is true))
+            {
+                if (sound.soloVoice is true)
+                {
+                    sound.source.Stop();
+                }
+            }
+        }
+
         s.source.Play();
 
         if (s.hasSubtitle)
