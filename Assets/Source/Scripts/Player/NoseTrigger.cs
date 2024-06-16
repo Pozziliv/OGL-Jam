@@ -22,6 +22,7 @@ public class NoseTrigger : MonoBehaviour
             _playerAttemptClimp = false;
 
             FindObjectOfType<AudioManager>().Play("TowerAmbient");
+            FindObjectOfType<QuestsManager>().SetTowerCheck();
             FindObjectOfType<TowerEndingTrigger>().StartWait();
         }
         else if (_playerAttemptClimp is true && Input.GetKeyDown(KeyCode.E) && _playerOnTower)

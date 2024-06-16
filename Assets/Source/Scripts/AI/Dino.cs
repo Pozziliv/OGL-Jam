@@ -32,7 +32,7 @@ public class Dino : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         FindObjectOfType<AudioManager>().Play("Nick14");
-        //FindObjectOfType<QuestsManager>().SetDinoCheck();
+        FindObjectOfType<QuestsManager>().SetDinoCheck();
 
         yield return new WaitForSeconds(3f);
 

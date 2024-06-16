@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class QuestsManager : MonoBehaviour
 {
@@ -9,6 +10,14 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] private GameObject[] _dinoCheckTriggers;
 
     [SerializeField] private GameObject[] _rideFunicTriggers;
+    [SerializeField] private GameObject[] _towerCheckTriggers;
+
+    [SerializeField] private CanvasGroup _blackScreen;
+    [SerializeField] private GameObject _crosshair;
+    [SerializeField] private CanvasGroup[] _endingsScreens;
+    [SerializeField] private Transform _goBack;
+
+    private int _sevenEndingCounter = 0;
 
     private void Start()
     {
@@ -56,6 +65,13 @@ public class QuestsManager : MonoBehaviour
             obj.SetActive(false);
         }
     }
+    public void SetTowerCheck()
+    {
+        foreach (GameObject obj in _towerCheckTriggers)
+        {
+            obj.SetActive(false);
+        }
+    }
 
     public void CarEnding()
     {
@@ -65,12 +81,15 @@ public class QuestsManager : MonoBehaviour
     private IEnumerator CarMakeBRRRRRRRRRR()
     {
         FindObjectOfType<AudioManager>().Play("Nick28");
-        yield return null;
+        _blackScreen.alpha = 1;
+        FindObjectOfType<CharacterController>().enabled = false;
+        yield return new WaitForSeconds(13f);
+        _endingsScreens[0].alpha = 1;
     }
 
     public void SetFuniculerInt(int value)
     {
-        if(value == 2)
+        if (value == 2)
         {
             _rideFunicTriggers[0].SetActive(true);
         }
@@ -89,6 +108,69 @@ public class QuestsManager : MonoBehaviour
         else if (value == 6)
         {
             _rideFunicTriggers[4].SetActive(true);
+        }
+    }
+
+    public void SixEndStart()
+    {
+        StartCoroutine(SixEnding());
+    }
+
+    private IEnumerator SixEnding()
+    {
+        _blackScreen.alpha = 1;
+        FindObjectOfType<CharacterController>().enabled = false;
+        _crosshair.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("Nick27");
+        yield return new WaitForSeconds(12f);
+        _endingsScreens[5].alpha = 1;
+    }
+
+    public void SevenEndStart()
+    {
+        StartCoroutine(SevenEnding());
+    }
+
+    private IEnumerator SevenEnding()
+    {
+        _blackScreen.alpha = 1;
+        _sevenEndingCounter += 1;
+        var player = FindObjectOfType<CharacterController>();
+        player.enabled = false;
+        _crosshair.SetActive(false);
+
+        if (_sevenEndingCounter == 1)
+        {
+            FindObjectOfType<AudioManager>().Play("Nick26");
+            yield return new WaitForSeconds(6f);
+            player.transform.position = _goBack.position;
+            player.enabled = true;
+            _blackScreen.alpha = 0;
+        }
+
+        if (_sevenEndingCounter == 2)
+        {
+            FindObjectOfType<AudioManager>().Play("Nick44");
+            yield return new WaitForSeconds(5f);
+            player.transform.position = _goBack.position;
+            player.enabled = true;
+            _blackScreen.alpha = 0;
+        }
+
+        if (_sevenEndingCounter == 3)
+        {
+            FindObjectOfType<AudioManager>().Play("Nick45");
+            yield return new WaitForSeconds(8f);
+            player.transform.position = _goBack.position;
+            player.enabled = true;
+            _blackScreen.alpha = 0;
+        }
+
+        if (_sevenEndingCounter == 4)
+        {
+            FindObjectOfType<AudioManager>().Play("Nick46");
+            yield return new WaitForSeconds(10f);
+            _endingsScreens[0].alpha = 1;
         }
     }
 }

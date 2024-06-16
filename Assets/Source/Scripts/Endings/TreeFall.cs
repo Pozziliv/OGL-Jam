@@ -20,6 +20,6 @@ public class TreeFall : MonoBehaviour
         _stvol.Play("Fall");
         _stvol.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(0.7f);
-        Debug.Log("dad");
+        FindFirstObjectByType<AudioManager>().Play("Nick39");
     }
 }

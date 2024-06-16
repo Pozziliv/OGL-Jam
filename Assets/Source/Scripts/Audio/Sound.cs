@@ -15,6 +15,8 @@ public class Sound
 
     public bool hasSubtitle;
 
+    public bool soloVoice;
+
     [HideInInspector]
     public AudioSource source;
 }
