@@ -4,16 +4,12 @@ public class PlayerCursorControl : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerController;
 
-    private void Start()
-    {
-        ActivatePlayerCursor();
-    }
-
     public void ActivatePlayerCursor()
     {
-        Cursor.lockState = CursorLockMode.None;
         _playerController.enabled = false;
-        Time.timeScale = 0f;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;    
+        //Time.timeScale = 0f;
     }
 
     public void DeactivatePlayerCursor()

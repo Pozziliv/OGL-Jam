@@ -4,6 +4,8 @@ public class NoseTrigger : MonoBehaviour
 {
     [SerializeField] private InteractiveCommands _interactiveCommands;
     [SerializeField] private CharacterController _player;
+    [SerializeField] private GameObject _extraCanvas;
+    [SerializeField] private PlayerCursorControl _playerCursorControl;
 
     private bool _playerOnTower;
     private bool _playerAttemptClimp;
@@ -11,6 +13,7 @@ public class NoseTrigger : MonoBehaviour
     private bool _playerWithDinoAlreadyInterracted;
     private bool _playerOnStartExit;
     private bool _playerWithACar;
+    private bool _playerDetectedExtraMaterials;
 
     private void Update()
     {
@@ -47,6 +50,13 @@ public class NoseTrigger : MonoBehaviour
             FindObjectOfType<QuestsManager>().CarEnding();
             _playerOnStartExit = true;
         }
+        else if (Input.GetKeyDown(KeyCode.E) && _playerDetectedExtraMaterials)
+        {
+            _interactiveCommands.HideInteractiveMessage();
+            _playerDetectedExtraMaterials = false;
+            _extraCanvas.SetActive(true);
+            _playerCursorControl.ActivatePlayerCursor();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -64,6 +74,11 @@ public class NoseTrigger : MonoBehaviour
         else if (other.tag == "Car" && _playerOnStartExit is false)
         {
             _playerWithACar = true;
+            _interactiveCommands.ShowInteractiveMessage();
+        }
+        else if (other.tag == "Extras")
+        {
+            _playerDetectedExtraMaterials = true;
             _interactiveCommands.ShowInteractiveMessage();
         }
     }
@@ -84,6 +99,11 @@ public class NoseTrigger : MonoBehaviour
         {
             _playerWithACar = false;
             _interactiveCommands.HideInteractiveMessage();
+        }
+        else if (other.tag == "Extras")
+        {
+            _playerDetectedExtraMaterials = false;
+            _interactiveCommands.HideInteractiveMessage(); 
         }
     }
 }
