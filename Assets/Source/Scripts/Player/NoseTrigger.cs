@@ -43,9 +43,9 @@ public class NoseTrigger : MonoBehaviour
         }
         else if (_playerOnStartExit is false && Input.GetKeyDown(KeyCode.E) && _playerWithACar is true)
         {
+            _interactiveCommands.HideInteractiveMessage();
             FindObjectOfType<QuestsManager>().CarEnding();
             _playerOnStartExit = true;
-            _interactiveCommands.HideInteractiveMessage();
         }
     }
 
@@ -80,7 +80,7 @@ public class NoseTrigger : MonoBehaviour
             _playerWithDino = false;
             _interactiveCommands.HideInteractiveMessage();
         }
-        else if (other.tag == "Car")
+        else if (other.tag == "Car" && _playerOnStartExit is false)
         {
             _playerWithACar = false;
             _interactiveCommands.HideInteractiveMessage();

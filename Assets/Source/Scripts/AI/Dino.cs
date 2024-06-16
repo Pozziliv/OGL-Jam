@@ -9,9 +9,11 @@ public class Dino : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Animator _stvol;
 
+    [SerializeField] private GameObject _wall;
+
     private void Start()
     {
-        _agent.speed = 3f;
+        _agent.speed = 4f;
     }
 
     public void Interract()
@@ -22,6 +24,8 @@ public class Dino : MonoBehaviour
     private IEnumerator AnimationToLeave()
     {
         _animator.Play("Pat");
+
+        _wall.SetActive(true);
 
         yield return new WaitForSeconds(3.42f);
         
@@ -34,12 +38,12 @@ public class Dino : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Nick14");
         FindObjectOfType<QuestsManager>().SetDinoCheck();
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
 
         _stvol.Play("Fall");
         _stvol.GetComponent<AudioSource>().Play();
 
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3f);
 
         FindObjectOfType<AudioManager>().Play("Nick15");
 
