@@ -23120,6 +23120,22 @@ MonoBehaviour:
     hasSubtitle: 1
     soloVoice: 1
     source: {fileID: 0}
+  - name: Animals
+    clip: {fileID: 8300000, guid: a68afc6c9bfd10e49a839168a0ffa098, type: 3}
+    mixer: {fileID: 5247329424840159022, guid: 2e65113920631e943a5a70ed3b33d522, type: 2}
+    volume: 0.26
+    pitch: 1
+    hasSubtitle: 0
+    soloVoice: 0
+    source: {fileID: 0}
+  - name: End
+    clip: {fileID: 8300000, guid: 529714026cdafce488ece3f51dea1b25, type: 3}
+    mixer: {fileID: 5247329424840159022, guid: 2e65113920631e943a5a70ed3b33d522, type: 2}
+    volume: 0.26
+    pitch: 1
+    hasSubtitle: 0
+    soloVoice: 0
+    source: {fileID: 0}
   _silenceCurve:
     serializedVersion: 2
     m_Curve:

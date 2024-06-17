@@ -84,6 +84,7 @@ public class QuestsManager : MonoBehaviour
         _blackScreen.alpha = 1;
         FindObjectOfType<CharacterController>().enabled = false;
         yield return new WaitForSeconds(13f);
+        FindObjectOfType<AudioManager>().Play("End");
         _endingsScreens[0].alpha = 1;
 
         Cursor.lockState = CursorLockMode.None;
@@ -127,6 +128,7 @@ public class QuestsManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Nick27");
         yield return new WaitForSeconds(12f);
         _endingsScreens[5].alpha = 1;
+        FindObjectOfType<AudioManager>().Play("End");
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -177,6 +179,7 @@ public class QuestsManager : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("Nick46");
             yield return new WaitForSeconds(10f);
             _endingsScreens[6].alpha = 1;
+            FindObjectOfType<AudioManager>().Play("End");
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -194,6 +197,7 @@ public class QuestsManager : MonoBehaviour
         _crosshair.SetActive(false);
         yield return new WaitForSeconds(5f);
         _endingsScreens[3].alpha = 1;
+        FindObjectOfType<AudioManager>().Play("End");
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -210,6 +214,7 @@ public class QuestsManager : MonoBehaviour
         _crosshair.SetActive(false);
         yield return new WaitForSeconds(1f);
         _endingsScreens[1].alpha = 1;
+        FindObjectOfType<AudioManager>().Play("End");
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -227,6 +232,7 @@ public class QuestsManager : MonoBehaviour
         _crosshair.SetActive(false);
         yield return new WaitForSeconds(1f);
         _endingsScreens[2].alpha = 1;
+        FindObjectOfType<AudioManager>().Play("End");
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -244,6 +250,7 @@ public class QuestsManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Nick40");
         yield return new WaitForSeconds(15f);
         _endingsScreens[4].alpha = 1;
+        FindObjectOfType<AudioManager>().Play("End");
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
