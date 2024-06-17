@@ -5,6 +5,8 @@ public class PlayerController : MonoBehaviour
 {
     private static float _lookSpeed = 2.0f;
 
+    [SerializeField] private GameObject _playerMenu;
+
     [Header("PlayerController")]
     [SerializeField] public Transform Camera;
     [SerializeField, Range(1, 10)] float walkingSpeed = 3.0f;
@@ -53,6 +55,9 @@ public class PlayerController : MonoBehaviour
     float installGravity;
     bool WallDistance;
     [HideInInspector] public float WalkingValue;
+
+    private bool _playerOnMenu;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -69,6 +74,18 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape) && _playerOnMenu is false)
+        {
+            _playerOnMenu = true;
+            PlayerOpenMenu();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape) && _playerOnMenu)
+        {
+            _playerOnMenu = false;
+            PlayerCloseMenu();
+        }
+
+
         if (!characterController.isGrounded && !isClimbing)
         {
             moveDirection.y -= gravity * Time.deltaTime;
@@ -164,5 +181,21 @@ public class PlayerController : MonoBehaviour
     public void SetSensitivity(float sensitivity)
     {
         _lookSpeed = sensitivity;
+    }
+
+    private void PlayerOpenMenu()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        _playerMenu.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
+    private void PlayerCloseMenu()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        _playerMenu.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
