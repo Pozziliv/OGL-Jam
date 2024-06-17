@@ -957,6 +957,13 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _activeWindow: {fileID: 0}
+  _playerCursorControl: {fileID: 0}
+  _isPlayerMainUI: 0
+  _imageObject: {fileID: 0}
+  _imageHolder: {fileID: 0}
+  _textForPicture: {fileID: 0}
+  _pictureText: 
 --- !u!1 &66593139
 GameObject:
   m_ObjectHideFlags: 0
@@ -6441,7 +6448,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 529441100}
         m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
-        m_MethodName: LoadGame
+        m_MethodName: LoadSceneByID
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6504,7 +6511,14 @@ MonoBehaviour:
   _playerController: {fileID: 0}
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
-  _indexOfScene: 0
+  _indexOfScene: 1
+  _activeWindow: {fileID: 0}
+  _playerCursorControl: {fileID: 0}
+  _isPlayerMainUI: 0
+  _imageObject: {fileID: 0}
+  _imageHolder: {fileID: 0}
+  _textForPicture: {fileID: 0}
+  _pictureText: 
 --- !u!1 &530313223
 GameObject:
   m_ObjectHideFlags: 0
@@ -13393,6 +13407,13 @@ MonoBehaviour:
   _settingWindow: {fileID: 721645779}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _activeWindow: {fileID: 0}
+  _playerCursorControl: {fileID: 0}
+  _isPlayerMainUI: 0
+  _imageObject: {fileID: 0}
+  _imageHolder: {fileID: 0}
+  _textForPicture: {fileID: 0}
+  _pictureText: 
 --- !u!114 &1058855370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13744,6 +13765,13 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 1064527695}
   _indexOfScene: 0
+  _activeWindow: {fileID: 0}
+  _playerCursorControl: {fileID: 0}
+  _isPlayerMainUI: 0
+  _imageObject: {fileID: 0}
+  _imageHolder: {fileID: 0}
+  _textForPicture: {fileID: 0}
+  _pictureText: 
 --- !u!1001 &1067732124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15822,6 +15850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7063a7b775f94794093fbf522095ad1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerMenu: {fileID: 0}
   Camera: {fileID: 1256085647}
   walkingSpeed: 3
   CroughSpeed: 1
@@ -20394,159 +20423,211 @@ MonoBehaviour:
   _sounds:
   - name: Nick1
     clip: {fileID: 8300000, guid: 6448db154ccbbc94487d25f03c92755a, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick2
     clip: {fileID: 8300000, guid: 3a8fa761f7c45634ea46ed47884e4dba, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick3
     clip: {fileID: 8300000, guid: b4d1f298213751f4ead718cff432893f, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick4
     clip: {fileID: 8300000, guid: cc3c51e183f5f8a4a9e55801e802db68, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick5
     clip: {fileID: 8300000, guid: 29d416af423d67b499e715c3aa60fd32, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick6
     clip: {fileID: 8300000, guid: 9dc041554886dc14abb727cc7d134910, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick7
     clip: {fileID: 8300000, guid: c69343a2263c9df4c8bebcda5b5383fe, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick8
     clip: {fileID: 8300000, guid: 044ac20df88e8884e867b5dd544f0f68, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick9
     clip: {fileID: 8300000, guid: 5f24a0bd7cb4a7b4d8c44856fc5258ea, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick10
     clip: {fileID: 8300000, guid: 04589334c92022743b3009ce2f092d48, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick11
     clip: {fileID: 8300000, guid: 08a52cacec210c24da99df8ac9f2519f, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: ElevatorAmbient
     clip: {fileID: 8300000, guid: 821aa7a0d09580b47ab73ffa96b7f8a0, type: 3}
+    mixer: {fileID: 0}
     volume: 0.26
     pitch: 1
     hasSubtitle: 0
+    soloVoice: 0
     source: {fileID: 0}
   - name: TowerAmbient
     clip: {fileID: 8300000, guid: fff348cadeb36f548b3acc442a4cea9f, type: 3}
+    mixer: {fileID: 0}
     volume: 0.26
     pitch: 1
     hasSubtitle: 0
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick12
     clip: {fileID: 8300000, guid: 5024bde1d1a687e4d9393135c57db34a, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick13
     clip: {fileID: 8300000, guid: 411693fef267c7446a2c608220033842, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick14
     clip: {fileID: 8300000, guid: b0c80bbe2a9a07e4ba4a30a01aa59c23, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick15
     clip: {fileID: 8300000, guid: cce633ae424e6834e8ab676b53c80632, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick16
     clip: {fileID: 8300000, guid: 37b1d41c9fc3f7d4c88df285a66f7f5e, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick17
     clip: {fileID: 8300000, guid: d735fd3f61a472c49a3b4892ed3ad3fb, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick18
     clip: {fileID: 8300000, guid: eecafe377c0f53f4ab2d5a473243decd, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick19
     clip: {fileID: 8300000, guid: b868edda2bf77a64186e06172d1d4945, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick20
     clip: {fileID: 8300000, guid: 11b1037081dab174faab7fa5698a6c21, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick21
     clip: {fileID: 8300000, guid: f52db3c9512defb4580e2efab0a2d309, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick22
     clip: {fileID: 8300000, guid: f3747f87fbd996c4b961e49273708dcd, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick23
     clip: {fileID: 8300000, guid: ebbc4475ad926eb4b8d056bc29cd1294, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   - name: Nick24
     clip: {fileID: 8300000, guid: 46ef0f9b5e071d54ca3bd5c5bf98d98d, type: 3}
+    mixer: {fileID: 0}
     volume: 1
     pitch: 1
     hasSubtitle: 1
+    soloVoice: 0
     source: {fileID: 0}
   _silenceCurve:
     serializedVersion: 2
@@ -21231,6 +21312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33847e314197e5d49bb0d4f7e60c8ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _nose: {fileID: 0}
 --- !u!1 &1748560369 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8280561712428297643, guid: 2a0044cd3ec11de4f948e985c90bbcc8,
@@ -22991,6 +23073,13 @@ MonoBehaviour:
   _settingWindow: {fileID: 721645779}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _activeWindow: {fileID: 0}
+  _playerCursorControl: {fileID: 0}
+  _isPlayerMainUI: 0
+  _imageObject: {fileID: 0}
+  _imageHolder: {fileID: 0}
+  _textForPicture: {fileID: 0}
+  _pictureText: 
 --- !u!1 &1886794482
 GameObject:
   m_ObjectHideFlags: 0
@@ -26735,6 +26824,12 @@ MonoBehaviour:
   _dinoCheckTriggers:
   - {fileID: 19217137}
   - {fileID: 688880064}
+  _rideFunicTriggers: []
+  _towerCheckTriggers: []
+  _blackScreen: {fileID: 0}
+  _crosshair: {fileID: 0}
+  _endingsScreens: []
+  _goBack: {fileID: 0}
 --- !u!1 &2123293564
 GameObject:
   m_ObjectHideFlags: 0

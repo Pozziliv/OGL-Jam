@@ -28,7 +28,7 @@ public class MenuHandler : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadGame()
+    public void LoadSceneByID()
     {
         SceneManager.LoadScene(_indexOfScene);
     }
