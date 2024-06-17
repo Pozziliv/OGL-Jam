@@ -34,6 +34,8 @@ public class AudioManager : MonoBehaviour
             sound.source.volume = sound.volume;
             sound.source.pitch = sound.pitch;
 
+            sound.source.outputAudioMixerGroup = sound.mixer;
+
             sound.source.playOnAwake = false;
         }
     }
