@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+    public bool hasSubs = true;
+
     private void Awake()
     {
         if (instance == null)
@@ -62,7 +64,7 @@ public class AudioManager : MonoBehaviour
 
         s.source.Play();
 
-        if (s.hasSubtitle)
+        if (s.hasSubtitle && hasSubs is true)
         {
             FindObjectOfType<SubtitlesManager>().StartSubtitles(s.name);
         }

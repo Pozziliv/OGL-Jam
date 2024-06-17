@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Slider _dialogueSlider;
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _soundSlider;
+    [SerializeField] private Slider _sensSlider;
+
+    [SerializeField] private Toggle _muteSubsToggle;
 
     [SerializeField] private AudioMixer _masterMixer;
 
@@ -17,6 +21,11 @@ public class SettingsMenu : MonoBehaviour
         _dialogueSlider.onValueChanged.AddListener(ChangeDialogueVolume);
         _musicSlider.onValueChanged.AddListener(ChangeMusicVolume);
         _soundSlider.onValueChanged.AddListener(ChangeSoundVolume);
+        _sensSlider.onValueChanged.AddListener(SetNewSensitivity);
+
+        _sensSlider.value = FindObjectOfType<PlayerController>().GetSensitivity();
+
+        _muteSubsToggle.isOn = FindObjectOfType<AudioManager>().hasSubs;
     }
 
     private void ChangeMasterVolume(float volume)
@@ -34,5 +43,15 @@ public class SettingsMenu : MonoBehaviour
     private void ChangeSoundVolume(float volume)
     {
         _masterMixer.SetFloat("SoundsVolume", volume);
+    }
+
+    public void HasSubtitle(bool value)
+    {
+        FindObjectOfType<AudioManager>().hasSubs = value;
+    }
+
+    public void SetNewSensitivity(float value)
+    {
+        FindObjectOfType<PlayerController>().SetSensitivity(value);
     }
 }
