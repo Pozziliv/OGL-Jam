@@ -12218,6 +12218,7 @@ GameObject:
   - component: {fileID: 728822159}
   - component: {fileID: 728822161}
   - component: {fileID: 728822160}
+  - component: {fileID: 728822162}
   m_Layer: 5
   m_Name: PlayerMenu
   m_TagString: Untagged
@@ -12285,6 +12286,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 728822158}
   m_CullTransparentMesh: 1
+--- !u!114 &728822162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728822158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd288013ee8997c40bc559a9cf3bd7a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _masterSlider: {fileID: 1928035654}
+  _dialogueSlider: {fileID: 759016987}
+  _musicSlider: {fileID: 1495165424}
+  _soundSlider: {fileID: 2116172783}
+  _masterMixer: {fileID: 24100000, guid: 2e65113920631e943a5a70ed3b33d522, type: 2}
 --- !u!1 &729696637
 GameObject:
   m_ObjectHideFlags: 0
@@ -12734,8 +12752,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 201359074}
   m_HandleRect: {fileID: 632059370}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -25
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -26918,8 +26936,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1045419567}
   m_HandleRect: {fileID: 2008467742}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -25
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -30194,15 +30212,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7800207991713329802, guid: ea887ef93df0eec4f811ececf5c4a791,
         type: 3}
       insertIndex: 0
-      addedObject: {fileID: 728822159}
-    - targetCorrespondingSourceObject: {fileID: 7800207991713329802, guid: ea887ef93df0eec4f811ececf5c4a791,
-        type: 3}
-      insertIndex: 1
       addedObject: {fileID: 1067015570}
     - targetCorrespondingSourceObject: {fileID: 7800207991713329802, guid: ea887ef93df0eec4f811ececf5c4a791,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1100341480}
+    - targetCorrespondingSourceObject: {fileID: 7800207991713329802, guid: ea887ef93df0eec4f811ececf5c4a791,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 728822159}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea887ef93df0eec4f811ececf5c4a791, type: 3}
 --- !u!1 &1656555391
@@ -30574,7 +30592,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick28
     clip: {fileID: 8300000, guid: f2f73f9cdce95bd43ab045e00b145a52, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30582,7 +30601,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick29
     clip: {fileID: 8300000, guid: da628b3b714abd24a9d93e9f7ae6d579, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30590,7 +30610,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick30
     clip: {fileID: 8300000, guid: 2db52172e80812d4787b967580d27505, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30598,7 +30619,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick31
     clip: {fileID: 8300000, guid: db68ccd508488494bb2d48215730a9ac, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30606,7 +30628,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick32
     clip: {fileID: 8300000, guid: 8ec9f69f5f8651c46b9213371f48f223, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30614,7 +30637,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick33
     clip: {fileID: 8300000, guid: 12a50c418cb1aad459574696cc654f30, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30649,7 +30673,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick37
     clip: {fileID: 8300000, guid: b90a18d122fd63e4ea8fb799b7466556, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30657,7 +30682,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick38
     clip: {fileID: 8300000, guid: b438ec6f45526ab419a549f8c8090d79, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30665,7 +30691,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick39
     clip: {fileID: 8300000, guid: f97066ae62c1763478aea85e6d846f2d, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30673,7 +30700,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick40
     clip: {fileID: 8300000, guid: 88edef60f8d63354388b3315df283099, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30681,7 +30709,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick41
     clip: {fileID: 8300000, guid: 28b3593894022b440af7827f57c08e6b, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30689,7 +30718,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick42
     clip: {fileID: 8300000, guid: d546f10d629827240ba76f44f6a45a4c, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30697,7 +30727,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick43
     clip: {fileID: 8300000, guid: c33fbc40b1ebaa846a4a7a42f7abe3fc, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30705,7 +30736,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick44
     clip: {fileID: 8300000, guid: 7afb222dcba790e42bc3be34d631c1a0, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30713,7 +30745,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick45
     clip: {fileID: 8300000, guid: 8c0988347f7b5464dac7c0f2f3aa1d0f, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30721,7 +30754,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick46
     clip: {fileID: 8300000, guid: 869bbe35461c9174baf0a1212597aa2d, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30729,7 +30763,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick47
     clip: {fileID: 8300000, guid: e2c25e3d5c077474bae7d7545a494a02, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -30737,7 +30772,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Nick48
     clip: {fileID: 8300000, guid: 79247e94927f72f4b9dd5d24934c108b, type: 3}
-    mixer: {fileID: 0}
+    mixer: {fileID: -2563270111072379843, guid: 2e65113920631e943a5a70ed3b33d522,
+      type: 2}
     volume: 1
     pitch: 1
     hasSubtitle: 1
@@ -34961,8 +34997,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 218157889}
   m_HandleRect: {fileID: 1645642473}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -25
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -39436,8 +39472,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1975422498}
   m_HandleRect: {fileID: 331469150}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -25
+  m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
