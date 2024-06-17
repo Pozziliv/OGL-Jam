@@ -46,9 +46,9 @@ public class SettingsMenu : MonoBehaviour
         _masterMixer.SetFloat("SoundsVolume", volume);
     }
 
-    public void HasSubtitle(bool value)
+    public void HasSubtitle()
     {
-        FindObjectOfType<AudioManager>().hasSubs = value;
+        FindObjectOfType<AudioManager>().hasSubs = _muteSubsToggle.isOn;
     }
 
     public void SetNewSensitivity(float value)
