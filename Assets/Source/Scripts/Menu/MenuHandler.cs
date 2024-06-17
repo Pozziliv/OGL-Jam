@@ -32,6 +32,8 @@ public class MenuHandler : MonoBehaviour
     public void LoadSceneByID()
     {
         SceneManager.LoadScene(_indexOfScene);
+
+        FindObjectOfType<AudioManager>().StopAllPlayers();
     }
 
     public void ShowSettings()

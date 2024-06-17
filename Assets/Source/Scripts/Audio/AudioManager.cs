@@ -96,4 +96,12 @@ public class AudioManager : MonoBehaviour
 
         audioSource.Stop();
     }
+
+    public void StopAllPlayers()
+    {
+        foreach (var sound in _sounds.Where(x => x.source.isPlaying is true))
+        {
+            sound.source.Stop();
+        }
+    }
 }

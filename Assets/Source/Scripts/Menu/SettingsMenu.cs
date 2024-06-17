@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
 
@@ -53,5 +54,12 @@ public class SettingsMenu : MonoBehaviour
     public void SetNewSensitivity(float value)
     {
         FindObjectOfType<PlayerController>().SetSensitivity(value);
+    }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene(0);
+
+        FindObjectOfType<AudioManager>().StopAllPlayers();
     }
 }
