@@ -9,7 +9,7 @@ public class PlayerCursorControl : MonoBehaviour
         _playerController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;    
-        //Time.timeScale = 0f;
+        Time.timeScale = 0f;
     }
 
     public void DeactivatePlayerCursor()
