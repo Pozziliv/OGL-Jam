@@ -2827,6 +2827,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 1
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -4685,6 +4686,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -11871,6 +11873,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 1
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -15361,6 +15364,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -21105,6 +21109,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 728822158}
   _playerCursorControl: {fileID: 1155541371}
   _isPlayerMainUI: 1
@@ -22477,6 +22482,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 1
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -23508,6 +23514,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 1
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -27488,6 +27495,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -28109,6 +28117,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 1
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -28132,6 +28141,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -28740,6 +28750,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -29733,6 +29744,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -30568,7 +30580,7 @@ PrefabInstance:
     - target: {fileID: 8386558914924844609, guid: ea887ef93df0eec4f811ececf5c4a791,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8386558914924844609, guid: ea887ef93df0eec4f811ececf5c4a791,
         type: 3}
@@ -34857,6 +34869,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a1c14885bced4a744a7beebf0c4e387d, type: 2}
+    - target: {fileID: -1525400233062861005, guid: 2a0044cd3ec11de4f948e985c90bbcc8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 9.150242
+      objectReference: {fileID: 0}
+    - target: {fileID: -1525400233062861005, guid: 2a0044cd3ec11de4f948e985c90bbcc8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.6201
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2a0044cd3ec11de4f948e985c90bbcc8,
         type: 3}
       propertyPath: m_Name
@@ -36182,6 +36204,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -38066,6 +38089,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 1
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -38329,6 +38353,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 0
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
@@ -39734,6 +39759,7 @@ MonoBehaviour:
   _settingWindow: {fileID: 0}
   _slider: {fileID: 0}
   _indexOfScene: 1
+  _menuAudio: {fileID: 0}
   _activeWindow: {fileID: 0}
   _playerCursorControl: {fileID: 0}
   _isPlayerMainUI: 0
