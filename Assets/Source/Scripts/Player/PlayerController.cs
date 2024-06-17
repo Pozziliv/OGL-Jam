@@ -183,6 +183,11 @@ public class PlayerController : MonoBehaviour
         _lookSpeed = sensitivity;
     }
 
+    public float GetSensitivity()
+    {
+        return _lookSpeed;
+    }
+
     private void PlayerOpenMenu()
     {
         Cursor.lockState = CursorLockMode.None;
@@ -196,6 +201,6 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _playerMenu.SetActive(false);
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
     }
 }
