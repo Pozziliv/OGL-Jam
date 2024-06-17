@@ -10,6 +10,7 @@ public class MenuHandler : MonoBehaviour
     [SerializeField] private GameObject _settingWindow;
     [SerializeField] private Slider _slider;
     [SerializeField] private int _indexOfScene;
+    [SerializeField] private AudioSource _menuAudio; 
     [Space]
     [Header("Game UI")]
     [SerializeField] private GameObject _activeWindow;
@@ -28,7 +29,7 @@ public class MenuHandler : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadGame()
+    public void LoadSceneByID()
     {
         SceneManager.LoadScene(_indexOfScene);
     }
@@ -69,5 +70,11 @@ public class MenuHandler : MonoBehaviour
         _textForPicture.text = _pictureText;
         _selectedPicture = gameObject.GetComponent<Image>().sprite;
         _imageHolder.sprite = _selectedPicture;     
+    }
+
+    public void ChangeMusicVolume()
+    {
+        var slider = gameObject.GetComponent<Slider>();
+        _menuAudio.volume = slider.value;
     }
 }

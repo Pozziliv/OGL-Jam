@@ -1,4 +1,4 @@
-using System.Collections;
+п»їusing System.Collections;
 using UnityEngine;
 
 public class InteractiveCommands : MonoBehaviour
@@ -13,7 +13,7 @@ public class InteractiveCommands : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _timeWait;
 
-    private string _interactiveMessage = "Нажми Е, чтобы \r\nвзаимодействовать.";
+    private string _interactiveMessage = "РќР°Р¶РјРё Р•, С‡С‚РѕР±С‹ \r\nРІР·Р°РёРјРѕРґРµР№СЃС‚РІРѕРІР°С‚СЊ.";
 
     public void ShowInteractiveMessage()
     {
