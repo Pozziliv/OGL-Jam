@@ -104,4 +104,20 @@ public class AudioManager : MonoBehaviour
             sound.source.Stop();
         }
     }
+
+    public void PauseAllPlayers()
+    {
+        foreach (var sound in _sounds)
+        {
+            sound.source.Pause();
+        }
+    }
+
+    public void UnpauseAllPlayers()
+    {
+        foreach (var sound in _sounds)
+        {
+            sound.source.UnPause();
+        }
+    }
 }

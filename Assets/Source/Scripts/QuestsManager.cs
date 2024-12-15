@@ -16,6 +16,8 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] private CanvasGroup[] _endingsScreens;
     [SerializeField] private Transform _goBack;
 
+    static public bool IsFirstSceneShowed;
+
     private int _sevenEndingCounter = 0;
 
     private void Start()
@@ -25,17 +27,22 @@ public class QuestsManager : MonoBehaviour
 
     private IEnumerator Meeting()
     {
-        FindObjectOfType<AudioManager>().Play("Nick1");
+        if (IsFirstSceneShowed is false)
+        {
+            FindObjectOfType<AudioManager>().Play("Nick1");
 
-        yield return new WaitForSeconds(8.5f);
+            yield return new WaitForSeconds(8.5f);
 
-        FindObjectOfType<AudioManager>().Play("Nick2");
+            FindObjectOfType<AudioManager>().Play("Nick2");
 
-        yield return new WaitForSeconds(8.5f);
+            yield return new WaitForSeconds(8.5f);
 
-        FindObjectOfType<AudioManager>().Play("Nick3");
+            FindObjectOfType<AudioManager>().Play("Nick3");
 
-        yield return new WaitForSeconds(22.5f);
+            yield return new WaitForSeconds(22.5f);
+
+            IsFirstSceneShowed = true;
+        }
 
         yield return new WaitUntil(CheckInput);
 

@@ -77,11 +77,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && _playerOnMenu is false)
         {
             _playerOnMenu = true;
+            Time.timeScale = 0;
+            AudioManager.instance.PauseAllPlayers();
             PlayerOpenMenu();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && _playerOnMenu)
         {
             _playerOnMenu = false;
+            Time.timeScale = 1;
+            AudioManager.instance.UnpauseAllPlayers();
             PlayerCloseMenu();
         }
 
